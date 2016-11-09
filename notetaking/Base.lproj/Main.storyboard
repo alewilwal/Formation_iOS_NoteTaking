@@ -31,6 +31,10 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ku-8O-Oqc">
                                 <state key="normal" title="Ajouter"/>
+                                <connections>
+                                    <action selector="myBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fwG-9I-Upd"/>
+                                    <action selector="saveNote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8i-kg-swT"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-gg-kvg">
                                 <color key="backgroundColor" red="1" green="0.94008626596712308" blue="0.80575224826616954" alpha="1" colorSpace="calibratedRGB"/>
@@ -53,6 +57,10 @@
                             <constraint firstAttribute="trailingMargin" secondItem="7ku-8O-Oqc" secondAttribute="trailing" constant="10" id="zoK-V7-VRa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myTxtField" destination="YoS-Ff-OmH" id="pRn-xx-gMw"/>
+                        <outlet property="myTxtView" destination="Rod-gg-kvg" id="z61-dM-Fgn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

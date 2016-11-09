@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var myTxtField: UITextField!
+    @IBOutlet weak var myTxtView: UITextView!
+    @IBAction func saveNote(_ sender: UIButton){
+        
+    }
+
+
 
 }
 
