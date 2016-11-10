@@ -12,10 +12,15 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var myTxtField: UITextField!
     @IBOutlet weak var myTxtView: UITextView!
+    @IBOutlet weak var mySwitch: UISwitch!
+    @IBOutlet weak var myLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        updateMySwitchState()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,8 +58,23 @@ class ViewController: UIViewController {
     @IBAction func openKeyboard(_ sender: AnyObject) {
         myTxtField.becomeFirstResponder()
     }
+    @IBAction func mySwitchTapped(_ sender: AnyObject) {
+        updateMySwitchState()
+      
+    }
+    
+    func updateMySwitchState() {
+        if mySwitch.isOn{
+            myTxtField.autocorrectionType = UITextAutocorrectionType.yes
+            myLabel.text = "Autocorrect is ON"
+        }
+        else{
+            myTxtField.autocorrectionType = UITextAutocorrectionType.no
+            myLabel.text = "Autocorrect is OFF"
+        }
+        
+    }
 
-
-
+    
 }
 

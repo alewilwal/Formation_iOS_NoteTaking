@@ -29,7 +29,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1q-iV-0kR">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,6 +45,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aLD-7Q-j88">
+                                <connections>
+                                    <action selector="mySwitchTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="4dj-1O-Zg8"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autocorrect misspelled words" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bmm-CV-xRI">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -53,22 +63,28 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rod-gg-kvg" secondAttribute="bottom" constant="20" id="D5y-Cj-qFW"/>
                             <constraint firstItem="7ku-8O-Oqc" firstAttribute="leading" secondItem="YoS-Ff-OmH" secondAttribute="trailing" constant="20" id="ENK-Us-Toz"/>
                             <constraint firstItem="YoS-Ff-OmH" firstAttribute="top" secondItem="l1q-iV-0kR" secondAttribute="bottom" constant="20" id="JzQ-LO-UqT"/>
-                            <constraint firstItem="Rod-gg-kvg" firstAttribute="top" secondItem="YoS-Ff-OmH" secondAttribute="bottom" constant="20" id="KFx-2M-DPn"/>
+                            <constraint firstItem="Rod-gg-kvg" firstAttribute="top" secondItem="aLD-7Q-j88" secondAttribute="bottom" constant="20" id="MbD-Em-HRh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Rod-gg-kvg" secondAttribute="trailing" constant="10" id="adt-eB-MeU"/>
+                            <constraint firstItem="bmm-CV-xRI" firstAttribute="leading" secondItem="aLD-7Q-j88" secondAttribute="trailing" constant="20" id="cP4-Rv-GUB"/>
+                            <constraint firstItem="aLD-7Q-j88" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="fEZ-h0-mrK"/>
                             <constraint firstItem="YoS-Ff-OmH" firstAttribute="baseline" secondItem="7ku-8O-Oqc" secondAttribute="baseline" id="kbt-aH-dgJ"/>
+                            <constraint firstItem="bmm-CV-xRI" firstAttribute="centerY" secondItem="aLD-7Q-j88" secondAttribute="centerY" id="knb-JV-deN"/>
+                            <constraint firstItem="aLD-7Q-j88" firstAttribute="top" secondItem="YoS-Ff-OmH" secondAttribute="bottom" constant="20" id="v2B-Ko-9gL"/>
                             <constraint firstItem="l1q-iV-0kR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wo8-r5-UgT"/>
                             <constraint firstItem="Rod-gg-kvg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="10" id="zkE-t8-csb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7ku-8O-Oqc" secondAttribute="trailing" constant="10" id="zoK-V7-VRa"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="myLabel" destination="bmm-CV-xRI" id="r5z-Th-XG1"/>
+                        <outlet property="mySwitch" destination="aLD-7Q-j88" id="q3A-X3-TpI"/>
                         <outlet property="myTxtField" destination="YoS-Ff-OmH" id="pRn-xx-gMw"/>
                         <outlet property="myTxtView" destination="Rod-gg-kvg" id="z61-dM-Fgn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.39130434782609" y="122.40000000000001"/>
+            <point key="canvasLocation" x="116" y="121.88905547226388"/>
         </scene>
     </scenes>
 </document>
