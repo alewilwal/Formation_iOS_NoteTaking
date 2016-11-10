@@ -12,7 +12,18 @@
 		88F088231DD3188C006DA370 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F088211DD3188C006DA370 /* Main.storyboard */; };
 		88F088251DD3188C006DA370 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F088241DD3188C006DA370 /* Assets.xcassets */; };
 		88F088281DD3188C006DA370 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88F088261DD3188C006DA370 /* LaunchScreen.storyboard */; };
+		88F088361DD35965006DA370 /* notetakingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F088351DD35965006DA370 /* notetakingUITests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		88F088381DD35965006DA370 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 88F088121DD3188C006DA370 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 88F088191DD3188C006DA370;
+			remoteInfo = notetaking;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		88F0881A1DD3188C006DA370 /* notetaking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = notetaking.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +33,20 @@
 		88F088241DD3188C006DA370 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		88F088271DD3188C006DA370 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		88F088291DD3188C006DA370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		88F088331DD35965006DA370 /* notetakingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = notetakingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		88F088351DD35965006DA370 /* notetakingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = notetakingUITests.swift; sourceTree = "<group>"; };
+		88F088371DD35965006DA370 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		88F088171DD3188C006DA370 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88F088301DD35965006DA370 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -39,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				88F0881C1DD3188C006DA370 /* notetaking */,
+				88F088341DD35965006DA370 /* notetakingUITests */,
 				88F0881B1DD3188C006DA370 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				88F0881A1DD3188C006DA370 /* notetaking.app */,
+				88F088331DD35965006DA370 /* notetakingUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -62,6 +85,15 @@
 				88F088291DD3188C006DA370 /* Info.plist */,
 			);
 			path = notetaking;
+			sourceTree = "<group>";
+		};
+		88F088341DD35965006DA370 /* notetakingUITests */ = {
+			isa = PBXGroup;
+			children = (
+				88F088351DD35965006DA370 /* notetakingUITests.swift */,
+				88F088371DD35965006DA370 /* Info.plist */,
+			);
+			path = notetakingUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +116,24 @@
 			productReference = 88F0881A1DD3188C006DA370 /* notetaking.app */;
 			productType = "com.apple.product-type.application";
 		};
+		88F088321DD35965006DA370 /* notetakingUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88F0883A1DD35965006DA370 /* Build configuration list for PBXNativeTarget "notetakingUITests" */;
+			buildPhases = (
+				88F0882F1DD35965006DA370 /* Sources */,
+				88F088301DD35965006DA370 /* Frameworks */,
+				88F088311DD35965006DA370 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				88F088391DD35965006DA370 /* PBXTargetDependency */,
+			);
+			name = notetakingUITests;
+			productName = notetakingUITests;
+			productReference = 88F088331DD35965006DA370 /* notetakingUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -97,6 +147,11 @@
 					88F088191DD3188C006DA370 = {
 						CreatedOnToolsVersion = 8.0;
 						ProvisioningStyle = Automatic;
+					};
+					88F088321DD35965006DA370 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 88F088191DD3188C006DA370;
 					};
 				};
 			};
@@ -114,6 +169,7 @@
 			projectRoot = "";
 			targets = (
 				88F088191DD3188C006DA370 /* notetaking */,
+				88F088321DD35965006DA370 /* notetakingUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +185,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		88F088311DD35965006DA370 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -141,7 +204,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		88F0882F1DD35965006DA370 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88F088361DD35965006DA370 /* notetakingUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		88F088391DD35965006DA370 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 88F088191DD3188C006DA370 /* notetaking */;
+			targetProxy = 88F088381DD35965006DA370 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		88F088211DD3188C006DA370 /* Main.storyboard */ = {
@@ -282,6 +361,30 @@
 			};
 			name = Release;
 		};
+		88F0883B1DD35965006DA370 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = notetakingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wallinov.notetakingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = notetaking;
+			};
+			name = Debug;
+		};
+		88F0883C1DD35965006DA370 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = notetakingUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wallinov.notetakingUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = notetaking;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -299,6 +402,14 @@
 			buildConfigurations = (
 				88F0882D1DD3188C006DA370 /* Debug */,
 				88F0882E1DD3188C006DA370 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		88F0883A1DD35965006DA370 /* Build configuration list for PBXNativeTarget "notetakingUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88F0883B1DD35965006DA370 /* Debug */,
+				88F0883C1DD35965006DA370 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

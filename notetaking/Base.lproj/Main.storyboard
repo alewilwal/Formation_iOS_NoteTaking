@@ -20,9 +20,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YoS-Ff-OmH">
+                                <accessibility key="accessibilityConfiguration" identifier="newNote"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="openKeyboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rkw-aw-mCb"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1q-iV-0kR">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -32,12 +36,12 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ku-8O-Oqc">
                                 <state key="normal" title="Ajouter"/>
                                 <connections>
-                                    <action selector="myBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fwG-9I-Upd"/>
-                                    <action selector="saveNote:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l8i-kg-swT"/>
+                                    <action selector="saveNote" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rrp-gO-18o"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-gg-kvg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rod-gg-kvg">
                                 <color key="backgroundColor" red="1" green="0.94008626596712308" blue="0.80575224826616954" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="blocNote"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

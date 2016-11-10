@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var myTxtField: UITextField!
+    @IBOutlet weak var myTxtView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -20,10 +23,35 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBOutlet weak var myTxtField: UITextField!
-    @IBOutlet weak var myTxtView: UITextView!
-    @IBAction func saveNote(_ sender: UIButton){
-        
+
+    @IBAction func saveNote(){
+        if myTxtField.text != nil {
+            let textToAdd:String = myTxtField.text!
+            let existingText:String
+            if myTxtView.text != nil {
+                existingText = myTxtView.text!
+            } else {
+                existingText = ""
+            }
+            if myTxtField.text != "" {
+                if existingText == "" {
+                    myTxtView.text = textToAdd
+                    myTxtField.text = ""
+
+                } else {
+                    myTxtView.text = existingText + "\n" + textToAdd
+                    myTxtField.text = ""
+                    
+                }
+            }
+            
+        }
+        myTxtField.resignFirstResponder()
+    }
+    
+    
+    @IBAction func openKeyboard(_ sender: AnyObject) {
+        myTxtField.becomeFirstResponder()
     }
 
 
