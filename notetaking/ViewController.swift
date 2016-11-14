@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var myTxtField: UITextField!
     @IBOutlet weak var myTxtView: UITextView!
@@ -20,7 +20,13 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadNotes()
-        updateMySwitchState()        
+        updateMySwitchState()
+        myTxtField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        myTxtField.resignFirstResponder()
+        return false
     }
     
     func saveNotes() {
