@@ -14,53 +14,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var myTxtView: UITextView!
     @IBOutlet weak var mySwitch: UISwitch!
     @IBOutlet weak var myLabel: UILabel!
+    let NOTES_USER_DEFAULTS_KEY:String = "NOTES_DATA"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        updateMySwitchState()
-        
+        loadNotes()
+        updateMySwitchState()        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func saveNotes() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(self.myTxtView.text, forKey: NOTES_USER_DEFAULTS_KEY)
+        userDefaults.synchronize()
     }
-
-
-    @IBAction func saveNote(){
-        if myTxtField.text != nil {
-            let textToAdd:String = myTxtField.text!
-            let existingText:String
-            if myTxtView.text != nil {
-                existingText = myTxtView.text!
-            } else {
-                existingText = ""
-            }
-            if myTxtField.text != "" {
-                if existingText == "" {
-                    myTxtView.text = textToAdd
-                    myTxtField.text = ""
-
-                } else {
-                    myTxtView.text = existingText + "\n" + textToAdd
-                    myTxtField.text = ""
-                    
-                }
-            }
-            
+    
+    func loadNotes(){
+        let userDefaults = UserDefaults.standard
+        let notesData:String? = userDefaults.object(forKey: NOTES_USER_DEFAULTS_KEY) as? String
+        if notesData != nil {
+            self.myTxtView.text = notesData!
         }
-        myTxtField.resignFirstResponder()
-    }
-    
-    
-    @IBAction func openKeyboard(_ sender: AnyObject) {
-        myTxtField.becomeFirstResponder()
-    }
-    @IBAction func mySwitchTapped(_ sender: AnyObject) {
-        updateMySwitchState()
-      
     }
     
     func updateMySwitchState() {
@@ -74,7 +48,38 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 
+
+    @IBAction func addNoteButtonTouched() {
+        let textToAdd:String? = self.myTxtField.text!
+        if textToAdd != nil {
+            var existingText:String = self.myTxtView.text
+            if existingText.characters.count > 0 {
+                existingText = existingText + "\n"
+            }
+            existingText = existingText + textToAdd!
+            self.myTxtView.text = existingText
+            saveNotes()
+            self.myTxtField.text = ""
+        }
+        myTxtField.resignFirstResponder()
+    }
+    
+    @IBAction func openKeyboard() {
+        myTxtField.becomeFirstResponder()
+    }
+    
+    
+    @IBAction func mySwitchTapped() {
+        updateMySwitchState()
+    }
+    
+    
     
 }
 
